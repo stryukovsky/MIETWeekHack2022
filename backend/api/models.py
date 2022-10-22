@@ -15,6 +15,10 @@ class CallStatus(models.TextChoices):
     FAILED = 'Failed'
 
 
+russian_months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Августе', 'Сентябрь', 'Октябрь',
+                  'Ноябрь', 'Декабрь']
+
+
 class Call(models.Model):
     sender_phone = models.CharField(max_length=255)
     receiver_phone = models.CharField(max_length=255)
@@ -26,5 +30,6 @@ class Call(models.Model):
 class Trigger(models.Model):
     event = models.CharField(max_length=255, choices=TriggerEvent.choices, default=TriggerEvent.EXECUTE)
     call = models.OneToOneField(Call, on_delete=models.CASCADE, null=True)
+    #message_file = models.FileField()
 
-# Create your models here.
+
