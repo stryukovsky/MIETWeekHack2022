@@ -1,15 +1,16 @@
 import React from "react";
 import {Outlet} from 'react-router'
 import ResponsiveAppBar from "../ResponsiveAppBar/ResponsiveAppBar";
+import Container from "@mui/material/Container";
 
 
 const Layout = () => {
     return(
         <div className="layout">
             <ResponsiveAppBar/>
-            <div className="outlet-container">
+            <Container maxWidth="xl">
                 <Outlet/>
-            </div>
+            </Container>
         </div>
     )
 }
