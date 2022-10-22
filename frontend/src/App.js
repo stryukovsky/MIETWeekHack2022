@@ -4,6 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import StatisticsPage from './Pages/StatisticsPage'
 import Layout from '../src/Components/Layout/Layout'
 import ResponsiveAppBar from './Components/ResponsiveAppBar/ResponsiveAppBar'
+import CallChart from "./Components/CallChart/CallChart";
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
       // </Routes>
       <>
           <ResponsiveAppBar/>
+          <CallChart/>
+
 
       </>
   );
