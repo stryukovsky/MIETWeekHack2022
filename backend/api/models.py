@@ -18,6 +18,7 @@ class CallStatus(models.TextChoices):
 russian_months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Августе', 'Сентябрь', 'Октябрь',
                   'Ноябрь', 'Декабрь']
 
+days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 class Call(models.Model):
     sender_phone = models.CharField(max_length=255)
