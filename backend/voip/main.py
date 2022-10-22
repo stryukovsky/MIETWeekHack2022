@@ -14,6 +14,7 @@ django.setup()
 from django.conf import settings
 
 from voip.models import VoIPConfig
+from api.models import Call, Trigger, CallStatus
 
 
 def play_audio_in_call(filename: str, call: VoIPCall):
@@ -40,12 +41,30 @@ def call_callback(call: VoIPCall):
         call.hangup()
 
 
+def call_invoke(phone: VoIPPhone, sender_phone: str, receiver_phone: str, trigger: Trigger):
+    call = Call.objects.create(**{
+        "sender_phone": sender_phone,
+        "receiver_phone": receiver_phone,
+        "trigger": trigger,
+        "status": CallStatus.NOT_STARTED
+    })
+    try:
+        call = phone.call(receiver_phone)
+        play_audio_in_call(trigger.message_file.path, call)
+        call.status = CallStatus.SUCCESSFUL
+    except Exception as e:
+        call.status = CallStatus.FAILED
+    call.save()
+
+
 def main():
     if config := VoIPConfig.objects.first():
         try:
             phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
                               callCallback=call_callback)
             phone.start()
+            print("Press ENTER to finish")
+            phone.stop()
         except Exception as e:
             print(f"When user={config.username} password={config.password} error: {e}")
     else:
