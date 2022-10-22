@@ -1,11 +1,15 @@
 from rest_framework.decorators import APIView
-from rest_framework.request import Request
-from rest_framework.response import Response
+from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import Call, Trigger
+from .serializers import CallSerializer, TriggerSerializer
 
 
-class ExampleView(APIView):
+class CallViewSet(ModelViewSet):
+    queryset = Call.objects.all()
+    serializer_class = CallSerializer
 
-    def get(self, request: Request):
-        return Response({
-            "hello": "World"
-        })
+
+class TriggerViewSet(ModelViewSet):
+    queryset = Trigger.objects.all()
+    serializer_class = TriggerSerializer
