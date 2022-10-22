@@ -37,15 +37,14 @@ def call_callback(call):
         call.hangup()
 
 
-def perform_voip(config: VoIPConfig):
-    phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
-                      callCallback=call_callback)
-    phone.start()
-
-
 def main():
     if config := VoIPConfig.objects.first():
-        perform_voip(config)
+        try:
+            phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
+                              callCallback=call_callback)
+            phone.start()
+        except Exception as e:
+            print(f"When user={config.username} password={config.password} error: {e}")
     else:
         print("No configs are provided for VoIP")
 
