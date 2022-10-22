@@ -122,8 +122,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-#add logging morozooff
+# add logging morozooff
 
 LOGGING = {
     'version': 1,
@@ -155,3 +154,5 @@ LOGGING = {
         }
     }
 }
+
+IDLE_FILE = "audio/wait.wav"
