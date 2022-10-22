@@ -2,7 +2,7 @@ import os
 import sys
 
 import django
-from pyVoIP.VoIP import VoIPPhone, InvalidStateError, CallState
+from pyVoIP.VoIP import VoIPPhone, InvalidStateError, CallState, VoIPCall
 import wave
 import time
 
@@ -11,26 +11,29 @@ os.chdir(django_dir)
 sys.path.append(django_dir)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.settings")
 django.setup()
+from django.conf import settings
 
 from voip.models import VoIPConfig
 
 
-def call_callback(call):
+def play_audio_in_call(filename: str, call: VoIPCall):
+    with wave.open(filename, 'rb') as file:
+        frames_count = file.getnframes()
+        data = file.readframes(frames_count)
+        framerate = file.getframerate()
+    audio_duration = frames_count / framerate
+    call.answer()
+    call.write_audio(data)
+
+    time_to_stop = time.time() + audio_duration
+    while time.time() <= time_to_stop and call.state == CallState.ANSWERED:
+        time.sleep(0.1)
+    call.hangup()
+
+
+def call_callback(call: VoIPCall):
     try:
-        f = wave.open('announcment.wav', 'rb')
-        frames = f.getnframes()
-        data = f.readframes(frames)
-        f.close()
-
-        call.answer()
-        call.write_audio(data)  # This writes the audio data to the transmit buffer, this must be bytes.
-
-        stop = time.time() + (
-                frames / 8000)  # frames/8000 is the length of the audio in seconds. 8000 is the hertz of PCMU.
-
-        while time.time() <= stop and call.state == CallState.ANSWERED:
-            time.sleep(0.1)
-        call.hangup()
+        play_audio_in_call(settings.IDLE_FILE, call)
     except InvalidStateError:
         pass
     except Exception:

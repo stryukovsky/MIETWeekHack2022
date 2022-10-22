@@ -20,6 +20,7 @@ russian_months = ['Январь', 'Февраль', 'Март', 'Апрель', 
 
 days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
+
 class Call(models.Model):
     sender_phone = models.CharField(max_length=255)
     receiver_phone = models.CharField(max_length=255)
@@ -31,7 +32,4 @@ class Call(models.Model):
 class Trigger(models.Model):
     event = models.CharField(max_length=255, choices=TriggerEvent.choices, default=TriggerEvent.EXECUTE)
     call = models.OneToOneField(Call, on_delete=models.CASCADE, null=True)
-    #Dima-dzan tut dodelat nado
-    #message_file = models.FileField()
-
-
+    message_file = models.FileField(upload_to="audios", null=True, blank=True)
