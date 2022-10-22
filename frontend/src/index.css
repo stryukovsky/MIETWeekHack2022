@@ -13,8 +13,10 @@ code {
 }
 .navLink{
   text-decoration: none;
+  color: black;
 }
 
-.call-chart{
+.call-chart, .logs{
   margin-top: 50px;
+
 }

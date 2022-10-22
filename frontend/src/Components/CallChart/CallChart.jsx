@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
+import axios from "axios"
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -28,62 +29,62 @@ export const options = {
         },
         title: {
             display: true,
-            text: 'Гистограмма количества звонков',
+            text: 'Гистограмма количества звонков за 2022 год',
         },
     },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+// const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const apiData = [
-    {date: new Date(2012,3,12)},
-    {date: new Date(2012,2,23)},
-    {date: new Date(2012,4, 23)},
-    {date: new Date(2012,4,8)},
-    {date: new Date(2012, 2, 14)}
+    {month: "March", allCount: 15, failed: 5, successfull: 10},
+    {month: "September", allCount: 23, failed: 8, successfull: 15},
+    {month: "December", allCount: 8, failed: 2, successfull: 6},
+    {month: "November", allCount: 35, failed: 5, successfull: 30},
+    {month: "July", allCount: 19, failed: 3, successfull: 16}
 ];
 
-function getYearData(){
-    const result = apiData.group(({date}) => date);
-    // for (let obj of result) {
-    //     obj['1'] = obj['January'];
-    //     obj['2'] = obj['February'];
-    //     obj['3'] = obj['March'];
-    //     obj['4'] = obj['April'];
-    //     obj['5'] = obj['May'];
-    //     obj['6'] = obj['June'];
-    //     obj['7'] = obj['July'];
-    //     obj['8'] = obj['August'];
-    //     obj['9'] = obj['September'];
-    //     obj['10'] = obj['October'];
-    //     obj['11'] = obj['November'];
-    //     obj['12'] = obj['December'];
-    // }
-    console.log(result);
+ const getCallsPerYear = (setState) => {
+    axios.get('https://81b6-93-188-41-78.eu.ngrok.io/api/callsperyear').then((response) => setState(response.data))
+
 }
 
-export const data = {
-    labels,
-    datasets: [
-        {
-            label: 'Всего',
-            data: labels.map(() => Math.random()*1000),
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        },
-        {
-            label: 'Успешные',
-            data: labels.map(() => Math.random()*1000),
-            backgroundColor: 'rgba(53, 162, 235, 0.5)',
-        },
-        {
-            label: 'Не успешные',
-            data: labels.map(() => Math.random()*1000),
-            backgroundColor: 'rgba(178, 220, 88, 0.5)',
-        }
-    ],
-};
-
 export default function CallChart() {
-    getYearData();
+
+     const [apiData, setApiData] = useState([])
+
+
+
+
     ChartJS.defaults.font.size=20;
+    useEffect(()=>{
+        getCallsPerYear(setApiData);
+    }, []);
+
+    const data = useMemo( ()  => {
+        console.log(apiData)
+        return {
+        labels: apiData.map((item) => item.month),
+        datasets: [
+            {
+                label: 'Всего',
+                data: apiData.map((item) => item.failed + item.successful),
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            },
+            {
+                label: 'Успешные',
+                data: apiData.map((item) => item.successful),
+                backgroundColor: 'rgba(53, 162, 235, 0.5)',
+            },
+            {
+                label: 'Не успешные',
+                data: apiData.map((item) => item.failed),
+                backgroundColor: 'rgba(178, 220, 88, 0.5)',
+            }
+        ],
+    }
+    }, [apiData]);
+
+    console.log(data);
+
     return <Bar options={options} data={data} />;
 }

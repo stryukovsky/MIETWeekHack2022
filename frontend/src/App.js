@@ -3,16 +3,20 @@ import React from "react";
 import {Route, Routes} from "react-router-dom";
 import StatisticsPage from './Pages/StatisticsPage'
 import Layout from '../src/Components/Layout/Layout'
+import AuthPage from "./Pages/AuthPage";
+import LogsPage from "./Pages/LogsPage";
 
 
 
 function App() {
   return (
       <Routes>
-        <Route path="/" element={<Layout/>}>
-          {/*<Route path="home" element={<LoginPage/>}/>*/}
-          <Route path="stats" element={<StatisticsPage/>}/>
+        <Route path="app/" element={<Layout/>}>
+            <Route path="app/stats" element={<StatisticsPage/>}/>
+            <Route path="app/logs" element={<LogsPage/>}/>
+
         </Route>
+          <Route path="/" element={<AuthPage/>}/>
       </Routes>
 
   );

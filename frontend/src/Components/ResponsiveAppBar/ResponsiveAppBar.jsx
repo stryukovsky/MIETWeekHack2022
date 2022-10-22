@@ -14,9 +14,10 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import logo from '../../assets/img/logo.svg'
 import {NavLink} from "react-router-dom";
+import {deepPurple} from "@mui/material/colors";
 
 
-const pages = ['Статистика'];
+const pages = ['Статистика', 'Логи'];
 const settings = ['Profile', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -49,7 +50,7 @@ function ResponsiveAppBar() {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="/"
+                        href="/app"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -120,7 +121,7 @@ function ResponsiveAppBar() {
 
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        <NavLink to="/stats" className="navLink">
+                        <NavLink to="app/stats" className="navLink">
                             <Button
                                 key={pages[0]}
                                 onClick={handleCloseNavMenu}
@@ -129,12 +130,21 @@ function ResponsiveAppBar() {
                                 {pages[0]}
                             </Button>
                         </NavLink>
+                        <NavLink to="app/logs" className="navLink">
+                            <Button
+                                key={pages[1]}
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: 'black', display: 'block', fontSize:'15px'}}
+                            >
+                                {pages[1]}
+                            </Button>
+                        </NavLink>
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="F" sx={{ bgcolor: deepPurple[700] }} src="/static/images/avatar/2.jpg" />
                             </IconButton>
                         </Tooltip>
                         <Menu
@@ -153,11 +163,12 @@ function ResponsiveAppBar() {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
+                            {<NavLink to="/" className="navLink">
+                                <MenuItem key={settings[1]} onClick={handleCloseUserMenu}>
+                                    <Typography textAlign="center">{settings[1]}</Typography>
                                 </MenuItem>
-                            ))}
+                            </NavLink>
+                            }
                         </Menu>
                     </Box>
                 </Toolbar>

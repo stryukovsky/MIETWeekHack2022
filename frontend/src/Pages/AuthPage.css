@@ -1,0 +1,23 @@
+.auth{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+
+}
+.login-form{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid black;
+}
+.login-title{
+    align-self: center;
+}
+.avatar{
+    align-self: center;
+}
+
+.login-gif{
+    border: 1px solid black;
+}
