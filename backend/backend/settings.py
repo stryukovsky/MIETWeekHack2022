@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django',
     'api',
+    'voip',
     'rest_framework',
 ]
 
