@@ -1,1 +1,472 @@
 2022-10-22 20:41:06,787 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:13:13,806 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:13:16,998 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/urls.py changed, reloading.
+2022-10-23 08:13:17,221 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:14:03,202 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/models.py changed, reloading.
+2022-10-23 08:14:03,434 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:15:14,108 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/models.py changed, reloading.
+2022-10-23 08:15:14,388 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:17:55,057 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/models.py changed, reloading.
+2022-10-23 08:17:55,418 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:23:32,489 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/admin.py changed, reloading.
+2022-10-23 08:23:33,003 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:26:01,029 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 08:26:01,220 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:27:22,403 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/migrations/0005_logentry.py changed, reloading.
+2022-10-23 08:27:22,649 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:27:26,716 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:27:26,744 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:27:27,423 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:27:28,178 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:28:07,882 django.request WARNING  Not Found: /
+2022-10-23 08:28:12,139 django.request WARNING  Not Found: /api/
+2022-10-23 08:28:29,989 django.request WARNING  Not Found: /api/
+2022-10-23 08:28:30,049 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/urls.py changed, reloading.
+2022-10-23 08:28:30,456 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:28:31,188 django.request WARNING  Not Found: /api/
+2022-10-23 08:28:32,656 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:28:34,254 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:30:02,152 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/urls.py changed, reloading.
+2022-10-23 08:30:02,653 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:30:25,467 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 08:30:25,948 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:30:32,394 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 08:30:32,864 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:30:35,008 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 08:30:35,504 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:32:27,126 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 08:32:27,701 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:34:21,555 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 08:34:21,900 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:35:58,394 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 08:35:58,770 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:38:20,008 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 08:38:20,671 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:38:21,783 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:38:21,834 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:38:22,539 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:38:23,203 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:38:31,118 django.request ERROR    Internal Server Error: /api/callsperweek
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'datetime.datetime'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 57, in get
+    successful_count = all_calls.filter(status=CallStatus.SUCCESSFUL,
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'None' expected a number but got datetime.datetime(2022, 10, 16, 8, 38, 31, 67682).
+2022-10-23 08:38:56,464 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:39:05,141 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:39:49,650 django.request ERROR    Internal Server Error: /api/callsperweek
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'datetime.datetime'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 57, in get
+    successful_count = all_calls.filter(status=CallStatus.SUCCESSFUL,
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'None' expected a number but got datetime.datetime(2022, 10, 16, 8, 39, 5, 141958).
+2022-10-23 08:40:07,162 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:40:07,247 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:40:08,616 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:41:29,328 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/admin.py changed, reloading.
+2022-10-23 08:41:30,276 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:41:30,714 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:41:30,779 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:41:32,126 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:42:31,485 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:42:33,032 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:43:14,258 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:43:14,466 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 08:43:15,503 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:43:16,741 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:43:17,321 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 08:43:49,714 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 08:43:50,473 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 08:50:55,512 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/models.py changed, reloading.
+2022-10-23 08:50:56,772 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:00:22,882 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:00:34,146 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/urls.py changed, reloading.
+2022-10-23 09:00:34,449 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:00:34,953 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:00:34,979 django.request ERROR    Internal Server Error: /api/callsperweek
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 63, in get
+    'date': f"{current_day.month} {russian_months[current_day.day]}",
+IndexError: list index out of range
+2022-10-23 09:00:36,588 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:00:36,629 django.request ERROR    Internal Server Error: /api/callsperweek
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 63, in get
+    'date': f"{current_day.month} {russian_months[current_day.day]}",
+IndexError: list index out of range
+2022-10-23 09:01:07,226 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:01:07,262 django.request ERROR    Internal Server Error: /api/callsperweek
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 63, in get
+    'date': f"{russian_months[current_day.month]} {current_day.day} ",
+IndexError: list index out of range
+2022-10-23 09:01:07,311 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 09:01:07,817 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:01:08,510 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:01:09,076 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:01:17,302 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:01:17,347 django.request ERROR    Internal Server Error: /api/callsperquarter
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 74, in get
+    start_from = start_from.replace(month=month_quarter_starts[current_quarter], day=1, hour=0, minute=0, second=0)
+IndexError: list index out of range
+2022-10-23 09:01:18,321 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:01:18,359 django.request ERROR    Internal Server Error: /api/callsperquarter
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 74, in get
+    start_from = start_from.replace(month=month_quarter_starts[current_quarter], day=1, hour=0, minute=0, second=0)
+IndexError: list index out of range
+2022-10-23 09:01:46,580 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:01:46,598 django.request ERROR    Internal Server Error: /api/callsperquarter
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 74, in get
+    start_from = start_from.replace(month=month_quarter_starts[current_quarter], day=1, hour=0, minute=0, second=0)
+IndexError: list index out of range
+2022-10-23 09:01:47,076 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 09:01:47,641 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:01:48,095 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:01:48,111 django.request ERROR    Internal Server Error: /api/callsperquarter
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 74, in get
+    start_from = start_from.replace(month=month_quarter_starts[current_quarter], day=1, hour=0, minute=0, second=0)
+IndexError: list index out of range
+2022-10-23 09:01:48,813 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:01:48,854 django.request ERROR    Internal Server Error: /api/callsperquarter
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 74, in get
+    start_from = start_from.replace(month=month_quarter_starts[current_quarter], day=1, hour=0, minute=0, second=0)
+IndexError: list index out of range
+2022-10-23 09:01:49,281 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:01:49,325 django.request ERROR    Internal Server Error: /api/callsperquarter
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 74, in get
+    start_from = start_from.replace(month=month_quarter_starts[current_quarter], day=1, hour=0, minute=0, second=0)
+IndexError: list index out of range
+2022-10-23 09:02:13,742 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:02:15,437 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:02:28,424 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:02:30,041 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:02:30,080 django.request ERROR    Internal Server Error: /api/callsperquarter
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 90, in get
+    'weekEnd': f"{russian_months[week_ends.month]} {week_ends.day}",
+IndexError: list index out of range
+2022-10-23 09:02:31,111 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:02:31,144 django.request ERROR    Internal Server Error: /api/callsperquarter
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 90, in get
+    'weekEnd': f"{russian_months[week_ends.month]} {week_ends.day}",
+IndexError: list index out of range
+2022-10-23 09:02:31,571 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:02:31,595 django.request ERROR    Internal Server Error: /api/callsperquarter
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 90, in get
+    'weekEnd': f"{russian_months[week_ends.month]} {week_ends.day}",
+IndexError: list index out of range
+2022-10-23 09:02:44,456 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:02:46,582 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:02:46,692 django.request ERROR    Internal Server Error: /api/callsperquarter
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 90, in get
+    'weekEnd': f"{russian_months[week_ends.month]} {week_ends.day}",
+IndexError: list index out of range
+2022-10-23 09:03:01,466 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:03:03,029 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:03:24,569 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:03:26,410 django.security.SuspiciousSession WARNING  Session data corrupted

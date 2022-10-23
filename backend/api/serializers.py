@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from .models import Call, Trigger
+from .models import Call, Trigger, LogEntry
 
 
 class CallSerializer(ModelSerializer):
@@ -12,4 +12,10 @@ class CallSerializer(ModelSerializer):
 class TriggerSerializer(ModelSerializer):
     class Meta:
         model = Trigger
+        fields = '__all__'
+
+
+class LogEntrySerializer(ModelSerializer):
+    class Meta:
+        model = LogEntry
         fields = '__all__'

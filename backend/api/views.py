@@ -1,4 +1,6 @@
 import datetime
+import math
+from datetime import timedelta
 import time
 import wave
 
@@ -9,8 +11,8 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from voip.models import VoIPConfig
-from .models import Call, Trigger, russian_months, CallStatus, days_in_month
-from .serializers import CallSerializer, TriggerSerializer
+from .models import Call, Trigger, russian_months, CallStatus, days_in_month, LogEntry, month_quarter_starts
+from .serializers import CallSerializer, TriggerSerializer, LogEntrySerializer
 
 
 class CallViewSet(ModelViewSet):
@@ -45,80 +47,93 @@ class CallsPerMonthView(APIView):
         return Response(result)
 
 
+class CallsPerWeekView(APIView):
+    def get(self, request: Request) -> Response:
+        now = datetime.datetime.utcnow()
+        start_from = now - timedelta(days=7)
+        all_calls = Call.objects.filter(time_started__gt=start_from)
+        result = []
+        for day_iterator in range(1, 8):
+            current_day = start_from + timedelta(days=day_iterator)
+            successful_count = all_calls.filter(status=CallStatus.SUCCESSFUL,
+                                                time_started__day=current_day.day).count()
+            failed_count = all_calls.filter(status=CallStatus.FAILED,
+                                            time_started__day=current_day.day).count()
+            result.append({
+                'date': f"{russian_months[current_day.month - 1]} {current_day.day} ",
+                'successful': successful_count,
+                'failed': failed_count
+            })
+        return Response(result)
+
+
+class CallsPerQuarterView(APIView):
+    def get(self, request: Request) -> Response:
+        start_from = now = datetime.datetime.utcnow()
+        current_quarter = math.ceil(now.month / 3)
+        start_from = start_from.replace(month=month_quarter_starts[current_quarter - 1], day=1, hour=0, minute=0,
+                                        second=0)
+        weeks_count = 12
+        all_calls = Call.objects.filter(time_started__gt=start_from)
+        result = []
+        for week_iterator in range(weeks_count):
+            week_starts = start_from + timedelta(weeks=week_iterator)
+            week_ends = start_from + timedelta(weeks=week_iterator + 1)
+            successful_count = all_calls.filter(status=CallStatus.SUCCESSFUL,
+                                                time_started__gte=week_starts,
+                                                time_started__lte=week_ends
+                                                ).count()
+            failed_count = all_calls.filter(status=CallStatus.FAILED,
+                                            time_started__gte=week_starts,
+                                            time_started__lte=week_ends
+                                            ).count()
+            result.append({
+                'weekStart': f"{russian_months[week_starts.month - 1]} {week_starts.day} ",
+                'weekEnd': f"{russian_months[week_ends.month - 1]} {week_ends.day}",
+                'successful': successful_count,
+                'failed': failed_count
+            })
+        return Response(result)
+
+
 class TriggerViewSet(ModelViewSet):
     queryset = Trigger.objects.all()
     serializer_class = TriggerSerializer
 
 
+class LogEntryViewSet(ModelViewSet):
+    queryset = LogEntry.objects.all()
+    serializer_class = LogEntrySerializer
+
+
 class PerformCallView(APIView):
 
-    def start_and_call_immediately(self, request: Request) -> Response:
-        receiver_phone = request.query_params.get("to")
-        trigger_id = request.query_params.get("trigger")
-        trigger = Trigger.objects.get(id=trigger_id)
-        config = VoIPConfig.objects.first()
-        phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
-                          callCallback=None)
-        try:
-            phone.start()
-            call = phone.call(receiver_phone)
-            self.play_audio_in_call(trigger.message_file.path, call)
-            phone.stop()
-            return Response({"message": "success"})
-        except Exception as e:
-            phone.stop()
-            raise Exception(e)
-
-    def call_first_start_after(self, request: Request) -> Response:
-        receiver_phone = request.query_params.get("to")
-        trigger_id = request.query_params.get("trigger")
-        trigger = Trigger.objects.get(id=trigger_id)
-        config = VoIPConfig.objects.first()
-        phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
-                          callCallback=None)
-        try:
-            call = phone.call(receiver_phone)
-            phone.start()
-            self.play_audio_in_call(trigger.message_file.path, call)
-            phone.stop()
-            return Response({"message": "success"})
-        except Exception as e:
-            phone.stop()
-            raise Exception(e)
-
     def get(self, request: Request) -> Response:
-        return self.start_and_call_immediately(request)
-        # if config := VoIPConfig.objects.first():
-        #     try:
-        #         phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
-        #                           callCallback=None)
-        #         phone.start()
-        #         # print("Press ENTER to finish")
-        #         # phone.stop()
-        #         receiver_phone = request.query_params.get("to")
-        #         trigger_id = request.query_params.get("trigger")
-        #         trigger = Trigger.objects.get(id=trigger_id)
-        #         call = Call.objects.create(**{
-        #             "sender_phone": config.internal_phone,
-        #             "receiver_phone": receiver_phone,
-        #             "trigger": None,
-        #             "status": CallStatus.NOT_STARTED
-        #         })
-        #     except Exception as e:
-        #         return Response({"message": f"When user={config.username} password={config.password} error: {e}"})
-        # else:
-        #     return Response({"message": "No configs are provided for VoIP"})
-        #
-        # try:
-        #     call = phone.call(receiver_phone)
-        #     self.play_audio_in_call(trigger.message_file.path, call)
-        #     call.status = CallStatus.SUCCESSFUL
-        #     print({"message": "Call Succeeded"})
-        # except Exception as e:
-        #     print({"message": f"Call error {e}"})
-        #     call.status = CallStatus.FAILED
-        # call.save()
-        # return Response(f"Call has finalized with status {call.status}")
+        receiver_phone = request.query_params.get("to")
+        trigger_id = request.query_params.get("trigger")
+        try:
+            trigger = Trigger.objects.get(id=trigger_id)
+            config = VoIPConfig.objects.first()
+        except Exception as e:
+            return Response({"message": f"In database some data missing {e}"})
+        phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
+                          callCallback=None)
+        try:
+            phone.start()
+            call = phone.call(receiver_phone)
+            call_in_database = Call.objects.create(**{
+                "sender_phone": config.internal_phone,
+                "receiver_phone": receiver_phone,
+                "trigger": None,
+                "status": CallStatus.NOT_STARTED
+            })
+            self.play_audio_in_call(trigger.message_file.path, call)
+            call_in_database.status = CallStatus.SUCCESSFUL
+            phone.stop()
+            return Response({"message": "success"})
+        except Exception as e:
+            phone.stop()
+            raise Exception(e)
 
     def play_audio_in_call(self, filename: str, call: VoIPCall):
         with wave.open(filename, 'rb') as file:
