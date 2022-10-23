@@ -31,5 +31,5 @@ class Call(models.Model):
 
 class Trigger(models.Model):
     event = models.CharField(max_length=255, choices=TriggerEvent.choices, default=TriggerEvent.EXECUTE)
-    call = models.OneToOneField(Call, on_delete=models.CASCADE, null=True)
+    call = models.OneToOneField(Call, on_delete=models.CASCADE, null=True, blank=True)
     message_file = models.FileField(upload_to="audios", null=True, blank=True)

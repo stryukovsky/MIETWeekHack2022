@@ -52,38 +52,65 @@ class TriggerViewSet(ModelViewSet):
 
 class PerformCallView(APIView):
 
-    def get(self, request: Request) -> Response:
-        if config := VoIPConfig.objects.first():
-            try:
-                phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
-                                  callCallback=None)
-                phone.start()
-                print("Press ENTER to finish")
-                phone.stop()
-                receiver_phone = request.query_params.get("to")
-                trigger_id = request.query_params.get("trigger")
-                trigger = Trigger.objects.get(id=trigger_id)
-                call = Call.objects.create(**{
-                    "sender_phone": config,
-                    "receiver_phone": receiver_phone,
-                    "trigger": None,
-                    "status": CallStatus.NOT_STARTED
-                })
-            except Exception as e:
-                return Response({"message": f"When user={config.username} password={config.password} error: {e}"})
-        else:
-            return Response({"message": "No configs are provided for VoIP"})
+    def start_and_call_immediately(self, request: Request) -> Response:
+        receiver_phone = request.query_params.get("to")
+        trigger_id = request.query_params.get("trigger")
+        trigger = Trigger.objects.get(id=trigger_id)
+        config = VoIPConfig.objects.first()
+        phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
+                          callCallback=None)
+        phone.start()
+        call = phone.call(receiver_phone)
+        self.play_audio_in_call(trigger.message_file.path, call)
+        phone.stop()
+        return Response({"message": "success"})
 
-        try:
-            call = phone.call(receiver_phone)
-            self.play_audio_in_call(trigger.message_file.path, call)
-            call.status = CallStatus.SUCCESSFUL
-            print({"message": "Call Succeeded"})
-        except Exception as e:
-            print({"message": f"Call error {e}"})
-            call.status = CallStatus.FAILED
-        call.save()
-        return Response(f"Call has finalized with status {call.status}")
+    def call_first_start_after(self, request: Request) -> Response:
+        receiver_phone = request.query_params.get("to")
+        trigger_id = request.query_params.get("trigger")
+        trigger = Trigger.objects.get(id=trigger_id)
+        config = VoIPConfig.objects.first()
+        phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
+                          callCallback=None)
+        call = phone.call(receiver_phone)
+        phone.start()
+        self.play_audio_in_call(trigger.message_file.path, call)
+        phone.stop()
+        return Response({"message": "success"})
+
+    def get(self, request: Request) -> Response:
+        return self.start_and_call_immediately(request)
+        # if config := VoIPConfig.objects.first():
+        #     try:
+        #         phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
+        #                           callCallback=None)
+        #         phone.start()
+        #         # print("Press ENTER to finish")
+        #         # phone.stop()
+        #         receiver_phone = request.query_params.get("to")
+        #         trigger_id = request.query_params.get("trigger")
+        #         trigger = Trigger.objects.get(id=trigger_id)
+        #         call = Call.objects.create(**{
+        #             "sender_phone": config.internal_phone,
+        #             "receiver_phone": receiver_phone,
+        #             "trigger": None,
+        #             "status": CallStatus.NOT_STARTED
+        #         })
+        #     except Exception as e:
+        #         return Response({"message": f"When user={config.username} password={config.password} error: {e}"})
+        # else:
+        #     return Response({"message": "No configs are provided for VoIP"})
+        #
+        # try:
+        #     call = phone.call(receiver_phone)
+        #     self.play_audio_in_call(trigger.message_file.path, call)
+        #     call.status = CallStatus.SUCCESSFUL
+        #     print({"message": "Call Succeeded"})
+        # except Exception as e:
+        #     print({"message": f"Call error {e}"})
+        #     call.status = CallStatus.FAILED
+        # call.save()
+        # return Response(f"Call has finalized with status {call.status}")
 
     def play_audio_in_call(self, filename: str, call: VoIPCall):
         with wave.open(filename, 'rb') as file:
