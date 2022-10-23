@@ -11,7 +11,7 @@ class CallAdmin(admin.ModelAdmin):
 
 @register(Trigger)
 class TriggerAdmin(admin.ModelAdmin):
-    list_display = ("event", "call", "message_file")
+    list_display = ("id", "event", "call", "message_file")
     list_filter = ("event",)
 
 
