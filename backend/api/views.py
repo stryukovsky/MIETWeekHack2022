@@ -1,17 +1,16 @@
 import datetime
 import math
 from datetime import timedelta
-import time
-import wave
 
-from pyVoIP.VoIP import VoIPPhone, VoIPCall, CallState
 from rest_framework.decorators import APIView
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
+from voip.main import perform_call
 from voip.models import VoIPConfig
-from .models import Call, Trigger, russian_months, CallStatus, days_in_month, LogEntry, month_quarter_starts
+from .models import Call, Trigger, russian_months, CallStatus, days_in_month, LogEntry, month_quarter_starts, \
+    LogSeverityChoices
 from .serializers import CallSerializer, TriggerSerializer, LogEntrySerializer
 
 
@@ -114,37 +113,21 @@ class PerformCallView(APIView):
         try:
             trigger = Trigger.objects.get(id=trigger_id)
             config = VoIPConfig.objects.first()
+            if not config:
+                raise Exception("No config is provided")
         except Exception as e:
-            return Response({"message": f"In database some data missing {e}"})
-        phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
-                          callCallback=None)
+            message = f"In database some data missing {e}"
+            LogEntry.objects.create(message=message, severity=LogSeverityChoices.ERROR,
+                                    timestamp=datetime.datetime.utcnow())
+            return Response({"message": message})
         try:
-            phone.start()
-            call = phone.call(receiver_phone)
-            call_in_database = Call.objects.create(**{
-                "sender_phone": config.internal_phone,
-                "receiver_phone": receiver_phone,
-                "trigger": None,
-                "status": CallStatus.NOT_STARTED
-            })
-            self.play_audio_in_call(trigger.message_file.path, call)
-            call_in_database.status = CallStatus.SUCCESSFUL
-            phone.stop()
-            return Response({"message": "success"})
+            perform_call(config, trigger, receiver_phone)
+            message = f"Successfully called to {receiver_phone}"
+            LogEntry.objects.create(message=message, severity=LogSeverityChoices.INFO,
+                                    timestamp=datetime.datetime.utcnow())
+            return Response({"message": message})
         except Exception as e:
-            phone.stop()
-            raise Exception(e)
-
-    def play_audio_in_call(self, filename: str, call: VoIPCall):
-        with wave.open(filename, 'rb') as file:
-            frames_count = file.getnframes()
-            data = file.readframes(frames_count)
-            framerate = file.getframerate()
-        audio_duration = frames_count / framerate
-        call.answer()
-        call.write_audio(data)
-
-        time_to_stop = time.time() + audio_duration
-        while time.time() <= time_to_stop and call.state == CallState.ANSWERED:
-            time.sleep(0.1)
-        call.hangup()
+            message = f"When user={config.username} password={config.password} error: {e}"
+            LogEntry.objects.create(message=message, severity=LogSeverityChoices.ERROR,
+                                    timestamp=datetime.datetime.utcnow())
+            return Response({"message": message})

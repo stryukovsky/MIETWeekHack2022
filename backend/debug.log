@@ -470,3 +470,315 @@ IndexError: list index out of range
 2022-10-23 09:03:03,029 django.security.SuspiciousSession WARNING  Session data corrupted
 2022-10-23 09:03:24,569 django.utils.autoreload INFO     Watching for file changes with StatReloader
 2022-10-23 09:03:26,410 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:24:04,390 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:24:12,140 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:24:13,459 django.request WARNING  Not Found: /
+2022-10-23 09:24:14,436 django.request WARNING  Not Found: /favicon.ico
+2022-10-23 09:24:17,322 django.request WARNING  Not Found: /performCall
+2022-10-23 09:24:18,764 django.request WARNING  Not Found: /performCall/
+2022-10-23 09:24:22,388 django.request WARNING  Not Found: /api/performCall/
+2022-10-23 09:24:48,796 django.request WARNING  Not Found: /
+2022-10-23 09:24:58,695 django.request WARNING  Not Found: /ap
+2022-10-23 09:24:58,772 django.request WARNING  Not Found: /api
+2022-10-23 09:24:59,379 django.request WARNING  Not Found: /api/per
+2022-10-23 09:24:59,870 django.request WARNING  Not Found: /api/perform
+2022-10-23 09:25:00,562 django.request WARNING  Not Found: /api/performC
+2022-10-23 09:25:00,775 django.request WARNING  Not Found: /api/performCal
+2022-10-23 09:25:28,200 django.request WARNING  Not Found: /
+2022-10-23 09:28:33,734 django.request ERROR    Internal Server Error: /api/performCall
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 123, in get
+    perform_call(config, trigger, receiver_phone)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/voip/main.py", line 17, in perform_call
+    raise ValueError("Not implemented")
+ValueError: Not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 127, in get
+    message = f"When user={self.config.username} password={self.config.password} error: {e}"
+AttributeError: 'PerformCallView' object has no attribute 'config'
+2022-10-23 09:28:48,112 django.request ERROR    Internal Server Error: /api/performCall
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 123, in get
+    perform_call(config, trigger, receiver_phone)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/voip/main.py", line 17, in perform_call
+    raise ValueError("Not implemented")
+ValueError: Not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 127, in get
+    message = f"When user={config.username} password={config.password} error: {e}"
+AttributeError: 'PerformCallView' object has no attribute 'config'
+2022-10-23 09:28:48,795 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 09:28:49,251 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:28:49,548 django.request ERROR    Internal Server Error: /api/performCall
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 123, in get
+    perform_call(config, trigger, receiver_phone)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/voip/main.py", line 17, in perform_call
+    raise ValueError("Not implemented")
+ValueError: Not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 127, in get
+    message = f"When user={config.username} password={config.password} error: {e}"
+AttributeError: 'NoneType' object has no attribute 'username'
+2022-10-23 09:28:50,194 django.request ERROR    Internal Server Error: /api/performCall
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 123, in get
+    perform_call(config, trigger, receiver_phone)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/voip/main.py", line 17, in perform_call
+    raise ValueError("Not implemented")
+ValueError: Not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 127, in get
+    message = f"When user={config.username} password={config.password} error: {e}"
+AttributeError: 'NoneType' object has no attribute 'username'
+2022-10-23 09:28:50,649 django.request ERROR    Internal Server Error: /api/performCall
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 123, in get
+    perform_call(config, trigger, receiver_phone)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/voip/main.py", line 17, in perform_call
+    raise ValueError("Not implemented")
+ValueError: Not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 127, in get
+    message = f"When user={config.username} password={config.password} error: {e}"
+AttributeError: 'NoneType' object has no attribute 'username'
+2022-10-23 09:30:17,471 django.request ERROR    Internal Server Error: /api/performCall
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 123, in get
+    try:
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/voip/main.py", line 17, in perform_call
+    raise ValueError("Not implemented")
+ValueError: Not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 127, in get
+    return Response({"message": message})
+AttributeError: 'NoneType' object has no attribute 'username'
+2022-10-23 09:30:18,032 django.request ERROR    Internal Server Error: /api/performCall
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 123, in get
+    try:
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/voip/main.py", line 17, in perform_call
+    raise ValueError("Not implemented")
+ValueError: Not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 127, in get
+    return Response({"message": message})
+AttributeError: 'NoneType' object has no attribute 'username'
+2022-10-23 09:30:18,214 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 09:30:18,555 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:30:19,104 django.request ERROR    Internal Server Error: /api/performCall
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 124, in get
+    perform_call(config, trigger, receiver_phone)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/voip/main.py", line 17, in perform_call
+    raise ValueError("Not implemented")
+ValueError: Not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 129, in get
+    message = f"When user={config.username} password={config.password} error: {e}"
+AttributeError: 'NoneType' object has no attribute 'username'
+2022-10-23 09:30:19,517 django.request ERROR    Internal Server Error: /api/performCall
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 124, in get
+    perform_call(config, trigger, receiver_phone)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/voip/main.py", line 17, in perform_call
+    raise ValueError("Not implemented")
+ValueError: Not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/strukovsky/Work/MIETWeekHack/backend/api/views.py", line 129, in get
+    message = f"When user={config.username} password={config.password} error: {e}"
+AttributeError: 'NoneType' object has no attribute 'username'
+2022-10-23 09:30:42,565 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:31:17,777 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:31:25,249 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:31:25,273 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:31:26,394 django.security.SuspiciousSession WARNING  Session data corrupted
+2022-10-23 09:32:05,212 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 09:32:05,841 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:33:05,802 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 09:33:06,225 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:37:01,536 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 09:37:02,066 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:37:08,905 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:39:25,035 django.request WARNING  Not Found: /
+2022-10-23 09:39:46,922 django.request WARNING  Not Found: /
+2022-10-23 09:39:47,563 django.request WARNING  Not Found: /favicon.ico
+2022-10-23 09:39:48,008 django.request WARNING  Not Found: /
+2022-10-23 09:41:01,407 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:53:06,420 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 09:54:04,412 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 10:05:35,601 django.request WARNING  Not Found: /
+2022-10-23 10:06:13,773 django.utils.autoreload INFO     /Users/strukovsky/Work/MIETWeekHack/backend/api/views.py changed, reloading.
+2022-10-23 10:06:14,806 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-10-23 10:13:02,021 django.utils.autoreload INFO     Watching for file changes with StatReloader
