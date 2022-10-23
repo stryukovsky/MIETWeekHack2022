@@ -14,11 +14,21 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import logo from '../../assets/img/logo.svg'
 import {NavLink} from "react-router-dom";
-import {deepPurple} from "@mui/material/colors";
+import {deepPurple, lightGreen} from "@mui/material/colors";
+import {createTheme, ThemeProvider} from "@mui/material/styles";
 
 
 const pages = ['Статистика', 'Логи'];
 const settings = ['Profile', 'Logout'];
+
+const innerTheme = createTheme({
+    palette: {
+        primary: {
+            main: lightGreen[500],
+        },
+
+    },
+});
 
 function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -40,17 +50,18 @@ function ResponsiveAppBar() {
     };
 
     return (
+        <ThemeProvider theme={innerTheme}>
         <AppBar position="static" sx={{bgcolor: 'transparent'}}>
             <Container maxWidth="xl">
-                <Toolbar disableGutters sx={{
+                <Toolbar color="primary" disableGutters sx={{
                     p: 1
                 }}>
                     {/*<AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />*/}
                     <Typography
+                        color="primary"
                         variant="h6"
                         noWrap
-                        component="a"
-                        href="/app"
+                        component="p"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -64,18 +75,20 @@ function ResponsiveAppBar() {
                         <img src={logo} alt={"logo-img"}/>
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box color="primary" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
+                            color="primary"
                             size="large"
                             aria-label="account of current user"
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
-                            color="inherit"
+
                         >
                             <MenuIcon />
                         </IconButton>
                         <Menu
+                            color="primary"
                             id="menu-appbar"
                             anchorEl={anchorElNav}
                             anchorOrigin={{
@@ -93,12 +106,26 @@ function ResponsiveAppBar() {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))}
+                            <NavLink to="app/stats" className="navLink">
+                                <Button
+                                    color="primary"
+                                    key={pages[0]}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my:2, color: 'black', display: 'block', fontSize:'15px'}}
+                                >
+                                    {pages[0]}
+                                </Button>
+                            </NavLink>
+                            <NavLink to="app/logs" className="navLink">
+                                <Button
+                                    color="primary"
+                                    key={pages[1]}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'black', display: 'block', fontSize:'15px'}}
+                                >
+                                    {pages[1]}
+                                </Button>
+                            </NavLink>
                         </Menu>
                     </Box>
                     <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -123,18 +150,20 @@ function ResponsiveAppBar() {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         <NavLink to="app/stats" className="navLink">
                             <Button
+                                color="primary"
                                 key={pages[0]}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'black', display: 'block', fontSize:'15px'}}
+                                sx={{ my: 2, color: 'black', display: 'block', fontSize:'17px'}}
                             >
                                 {pages[0]}
                             </Button>
                         </NavLink>
                         <NavLink to="app/logs" className="navLink">
                             <Button
+                                color="primary"
                                 key={pages[1]}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'black', display: 'block', fontSize:'15px'}}
+                                sx={{ my: 2, color: 'black', display: 'block', fontSize:'17px'}}
                             >
                                 {pages[1]}
                             </Button>
@@ -142,12 +171,13 @@ function ResponsiveAppBar() {
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open settings">
+                        <Tooltip color="primary" title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="F" sx={{ bgcolor: deepPurple[700] }} src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="C" sx={{ bgcolor: lightGreen[400] }} src="/static/images/avatar/2.jpg" />
                             </IconButton>
                         </Tooltip>
                         <Menu
+                            color="primary"
                             sx={{ mt: '45px' }}
                             id="menu-appbar"
                             anchorEl={anchorElUser}
@@ -164,7 +194,7 @@ function ResponsiveAppBar() {
                             onClose={handleCloseUserMenu}
                         >
                             {<NavLink to="/" className="navLink">
-                                <MenuItem key={settings[1]} onClick={handleCloseUserMenu}>
+                                <MenuItem color="primary" key={settings[1]} onClick={handleCloseUserMenu}>
                                     <Typography textAlign="center">{settings[1]}</Typography>
                                 </MenuItem>
                             </NavLink>
@@ -174,6 +204,7 @@ function ResponsiveAppBar() {
                 </Toolbar>
             </Container>
         </AppBar>
+        </ThemeProvider>
     );
 }
 export default ResponsiveAppBar;

@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "homepage": "http://localhost:3000/app",
+  "homepage": "http://localhost:3000",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

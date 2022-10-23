@@ -68,17 +68,17 @@ export default function CallChart() {
             {
                 label: 'Всего',
                 data: apiData.map((item) => item.failed + item.successful),
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                backgroundColor: 'rgba(53, 162, 235, 0.5)',
             },
             {
                 label: 'Успешные',
                 data: apiData.map((item) => item.successful),
-                backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                backgroundColor: 'rgba(178, 220, 88, 0.5)',
             },
             {
                 label: 'Не успешные',
                 data: apiData.map((item) => item.failed),
-                backgroundColor: 'rgba(178, 220, 88, 0.5)',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
             }
         ],
     }
