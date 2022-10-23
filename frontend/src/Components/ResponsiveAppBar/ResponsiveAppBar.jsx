@@ -18,7 +18,7 @@ import {deepPurple, lightGreen} from "@mui/material/colors";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
 
 
-const pages = ['Статистика', 'Логи'];
+const pages = ['Статистика', 'Логи', 'Звонок'];
 const settings = ['Profile', 'Logout'];
 
 const innerTheme = createTheme({
@@ -126,6 +126,16 @@ function ResponsiveAppBar() {
                                     {pages[1]}
                                 </Button>
                             </NavLink>
+                            <NavLink to="app/logs" className="navLink">
+                                <Button
+                                    color="primary"
+                                    key={pages[2]}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'black', display: 'block', fontSize:'15px'}}
+                                >
+                                    {pages[2]}
+                                </Button>
+                            </NavLink>
                         </Menu>
                     </Box>
                     <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -166,6 +176,16 @@ function ResponsiveAppBar() {
                                 sx={{ my: 2, color: 'black', display: 'block', fontSize:'17px'}}
                             >
                                 {pages[1]}
+                            </Button>
+                        </NavLink>
+                        <NavLink to="app/call" className="navLink">
+                            <Button
+                                color="primary"
+                                key={pages[2]}
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: 'black', display: 'block', fontSize:'17px'}}
+                            >
+                                {pages[2]}
                             </Button>
                         </NavLink>
                     </Box>
