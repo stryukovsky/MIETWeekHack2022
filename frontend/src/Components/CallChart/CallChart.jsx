@@ -44,7 +44,7 @@ const apiData = [
 ];
 
  const getCallsPerYear = (setState) => {
-    axios.get('https://81b6-93-188-41-78.eu.ngrok.io/api/callsperyear').then((response) => setState(response.data))
+    axios.get('https://d874-93-188-41-78.eu.ngrok.io/api/callsperyear').then((response) => setState(response.data))
 
 }
 
