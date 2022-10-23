@@ -21,18 +21,7 @@ ChartJS.register(
     Legend
 );
 
-export const options = {
-    responsive: true,
-    plugins: {
-        legend: {
-            position: 'top',
-        },
-        title: {
-            display: true,
-            text: 'Гистограмма количества звонков за 2022 год',
-        },
-    },
-};
+
 
 // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const apiData = [
@@ -43,27 +32,39 @@ const apiData = [
     {month: "July", allCount: 19, failed: 3, successfull: 16}
 ];
 
- const getCallsPerYear = (setState) => {
-    axios.get('https://d874-93-188-41-78.eu.ngrok.io/api/callsperyear').then((response) => setState(response.data))
-
-}
-
-export default function CallChart() {
-
-     const [apiData, setApiData] = useState([])
 
 
+export default function CallChart({period, title}) {
 
+    const [apiData, setApiData] = useState([])
+
+    const getCallsPerYear = (setState) => {
+        axios.get(`https://76d1-93-188-41-78.eu.ngrok.io/api/callsper${period}`)
+            .then((response) => {setState(response.data); console.log(response.data)})
+    }
 
     ChartJS.defaults.font.size=20;
     useEffect(()=>{
         getCallsPerYear(setApiData);
-    }, []);
+    }, [period, title]);
+
+    const options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: `Гистограмма количества звонков ${title}`,
+            },
+        },
+    };
 
     const data = useMemo( ()  => {
         console.log(apiData)
         return {
-        labels: apiData.map((item) => item.month),
+        labels: apiData.map((item) => item.month ?? item.day ?? item.weekStart ?? item.date),
         datasets: [
             {
                 label: 'Всего',

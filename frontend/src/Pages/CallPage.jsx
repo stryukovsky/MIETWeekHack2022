@@ -27,7 +27,7 @@ function CallPage() {
 
     const handleSubmit = evt => {
         evt.preventDefault();
-        axios.get(`https://dec9-91-103-248-36.ngrok.io/api/performCall?to=${formInput.to}&trigger=${formInput.trigger}`).then(response => alert(response.data.message));
+        axios.get(`https://76d1-93-188-41-78.eu.ngrok.io/api/performCall?to=${formInput.to}&trigger=${formInput.trigger}`).then(response => alert(response.data.message));
     };
 
     const handleInput = evt => {
