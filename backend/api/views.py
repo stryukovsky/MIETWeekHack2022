@@ -59,11 +59,15 @@ class PerformCallView(APIView):
         config = VoIPConfig.objects.first()
         phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
                           callCallback=None)
-        phone.start()
-        call = phone.call(receiver_phone)
-        self.play_audio_in_call(trigger.message_file.path, call)
-        phone.stop()
-        return Response({"message": "success"})
+        try:
+            phone.start()
+            call = phone.call(receiver_phone)
+            self.play_audio_in_call(trigger.message_file.path, call)
+            phone.stop()
+            return Response({"message": "success"})
+        except Exception as e:
+            phone.stop()
+            raise Exception(e)
 
     def call_first_start_after(self, request: Request) -> Response:
         receiver_phone = request.query_params.get("to")
@@ -72,11 +76,15 @@ class PerformCallView(APIView):
         config = VoIPConfig.objects.first()
         phone = VoIPPhone(config.sip_server_address, config.sip_server_port, config.username, config.password,
                           callCallback=None)
-        call = phone.call(receiver_phone)
-        phone.start()
-        self.play_audio_in_call(trigger.message_file.path, call)
-        phone.stop()
-        return Response({"message": "success"})
+        try:
+            call = phone.call(receiver_phone)
+            phone.start()
+            self.play_audio_in_call(trigger.message_file.path, call)
+            phone.stop()
+            return Response({"message": "success"})
+        except Exception as e:
+            phone.stop()
+            raise Exception(e)
 
     def get(self, request: Request) -> Response:
         return self.start_and_call_immediately(request)
