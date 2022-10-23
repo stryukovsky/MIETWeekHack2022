@@ -1,17 +1,10 @@
-import os
-import sys
+import subprocess
 
-import django
-
-django_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-os.chdir(django_dir)
-sys.path.append(django_dir)
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.settings")
-django.setup()
-
+from api.models import Trigger
 from voip.models import VoIPConfig
-from api.models import LogEntry, LogSeverityChoices, Trigger
 
 
 def perform_call(config: VoIPConfig, trigger: Trigger, receiver_phone: str):
-    raise ValueError("Not implemented")
+    call_string = f".\Caller.exe {config.username} {config.password} {config.sip_server_address}" \
+                  f" {config.sip_server_port} {trigger.message_file.path} {receiver_phone}"
+    subprocess.call(call_string)
