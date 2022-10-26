@@ -1,8 +1,7 @@
 import  React, {useEffect, useMemo, useState} from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
-import axios from "axios"
-import { red, yellow } from '@mui/material/colors';
+import axios from "axios";
 
 const columns = [
     {
@@ -32,13 +31,12 @@ const columns = [
 //     { id: 3, date: new Date(), message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", type: "debug"},
 // ];
 
-
 export default function DataTable() {
 
     const [jsonRows, setJsonRows] = useState([]);
 
     const getLogs = () => {
-        axios.get('https://76d1-93-188-41-78.eu.ngrok.io/api/logs')
+        axios.get('https://fa65-176-59-54-115.eu.ngrok.io /api/logs')
             .then(response => setJsonRows(response.data));
     }
 
@@ -55,9 +53,6 @@ export default function DataTable() {
             return {id, timestamp, message, severity};
         } );
     }, [jsonRows])
-
-    console.log(rows)
-
 
     return (
         <div style={{ height: 780, width: '100%' }}>

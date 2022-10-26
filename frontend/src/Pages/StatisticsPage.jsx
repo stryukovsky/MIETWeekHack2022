@@ -35,7 +35,7 @@ function StatisticsPage() {
                         <Button onClick={() => {setPeriod('week');setTitle('за неделю')}} sx={{ px: 17, fontWeight: 'bold', borderRadius: 3, border: 2 }} size="large">За неделю</Button>
                     </ButtonGroup>
                 </div>
-                <Fab color="primary" size='large' aria-label="add" href="https://76d1-93-188-41-78.eu.ngrok.io/admin" sx={{color: "#f5f5f5", zIndex: 'tooltip', bottom:70, left:1575}}>
+                <Fab color="primary" size='large' aria-label="add" href="https://fa65-176-59-54-115.eu.ngrok.io /admin" sx={{color: "#f5f5f5", zIndex: 'tooltip', bottom:70, left:1575}}>
                     <AddIcon />
                 </Fab>
             </ThemeProvider>

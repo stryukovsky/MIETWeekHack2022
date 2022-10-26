@@ -14,9 +14,8 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import logo from '../../assets/img/logo.svg'
 import {NavLink} from "react-router-dom";
-import {deepPurple, lightGreen} from "@mui/material/colors";
+import {lightGreen} from "@mui/material/colors";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
-
 
 const pages = ['Статистика', 'Логи', 'Звонок'];
 const settings = ['Profile', 'Logout'];

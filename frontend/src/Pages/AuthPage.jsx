@@ -1,18 +1,12 @@
 import React from 'react'
 import Container from "@mui/material/Container";
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import './AuthPage.css'
-import logo from "../assets/img/logo.svg";
-import Typography from "@mui/material/Typography";
-import {deepOrange} from "@mui/material/colors";
 import {NavLink} from "react-router-dom";
 import Checkbox from '@mui/material/Checkbox';
-import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import {responsiveFontSizes} from "@mui/material";
 import logoAuth from '../assets/img/app_image_transparent.png';
 import logoAuthShadow from '../assets/img/phone-shadow.png'
 import { createTheme, ThemeProvider } from '@mui/material/styles';

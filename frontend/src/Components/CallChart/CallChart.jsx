@@ -11,7 +11,6 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
-
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -21,26 +20,21 @@ ChartJS.register(
     Legend
 );
 
-
-
-// const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const apiData = [
+/*const apiData = [
     {month: "March", allCount: 15, failed: 5, successfull: 10},
     {month: "September", allCount: 23, failed: 8, successfull: 15},
     {month: "December", allCount: 8, failed: 2, successfull: 6},
     {month: "November", allCount: 35, failed: 5, successfull: 30},
     {month: "July", allCount: 19, failed: 3, successfull: 16}
-];
-
-
+];*/
 
 export default function CallChart({period, title}) {
 
     const [apiData, setApiData] = useState([])
 
     const getCallsPerYear = (setState) => {
-        axios.get(`https://76d1-93-188-41-78.eu.ngrok.io/api/callsper${period}`)
-            .then((response) => {setState(response.data); console.log(response.data)})
+        axios.get(`https://fa65-176-59-54-115.eu.ngrok.io /api/callsper${period}`)
+            .then((response) => setState(response.data));
     }
 
     ChartJS.defaults.font.size=20;
@@ -62,7 +56,6 @@ export default function CallChart({period, title}) {
     };
 
     const data = useMemo( ()  => {
-        console.log(apiData)
         return {
         labels: apiData.map((item) => item.month ?? item.day ?? item.weekStart ?? item.date),
         datasets: [
@@ -84,8 +77,6 @@ export default function CallChart({period, title}) {
         ],
     }
     }, [apiData]);
-
-    console.log(data);
 
     return <Bar options={options} data={data} />;
 }
