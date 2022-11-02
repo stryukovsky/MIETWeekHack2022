@@ -43,7 +43,8 @@ namespace Caller
                 player = new WaveStreamPlayback(@"C:\Users\kondi\Desktop\file_example_WAV_1MG.wav");
                 addresseePhone = "5559201";
 
-                account = new SIPAccount(registrationRequired, displayName, userName, authenticationId, registerPassword, domainHost, domainPort);
+                account = new SIPAccount(registrationRequired, displayName, userName, authenticationId,
+                    registerPassword, domainHost, domainPort);
             }
             else
             {
@@ -57,7 +58,8 @@ namespace Caller
                 player = new WaveStreamPlayback(args[4]);
                 addresseePhone = args[5];
 
-                account = new SIPAccount(registrationRequired, displayName, userName, authenticationId, registerPassword, domainHost, domainPort);
+                account = new SIPAccount(registrationRequired, displayName, userName, authenticationId,
+                    registerPassword, domainHost, domainPort);
             }
 
             // Send SIP regitration request
@@ -104,18 +106,6 @@ namespace Caller
             call.Start();
         }
 
-        private static void SetupDevices()
-        {
-            connector.Connect(microphone, mediaSender);
-            connector.Connect(mediaReceiver, speaker);
-
-            mediaSender.AttachToCall(call);
-            mediaReceiver.AttachToCall(call);
-
-            microphone.Start();
-            speaker.Start();
-        }
-
         static void SetupPlayer()
         {
             connector.Connect(player, mediaSender);
@@ -125,7 +115,6 @@ namespace Caller
 
             Console.WriteLine("The wav player is streaming.");
         }
-
 
         static void call_CallStateChanged(object sender, CallStateChangedArgs e)
         {
