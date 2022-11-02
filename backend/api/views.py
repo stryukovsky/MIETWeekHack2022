@@ -119,15 +119,15 @@ class PerformCallView(APIView):
             message = f"In database some data missing {e}"
             LogEntry.objects.create(message=message, severity=LogSeverityChoices.ERROR,
                                     timestamp=datetime.datetime.utcnow())
-            return Response({"message": message})
+            return Response({"message": message, "status": "error"})
         try:
             perform_call(config, trigger, receiver_phone)
             message = f"Successfully called to {receiver_phone}"
             LogEntry.objects.create(message=message, severity=LogSeverityChoices.INFO,
                                     timestamp=datetime.datetime.utcnow())
-            return Response({"message": message})
+            return Response({"message": message, "status": "success"})
         except Exception as e:
             message = f"When user={config.username} password={config.password} error: {e}"
             LogEntry.objects.create(message=message, severity=LogSeverityChoices.ERROR,
                                     timestamp=datetime.datetime.utcnow())
-            return Response({"message": message})
+            return Response({"message": message, "status": "error"})
