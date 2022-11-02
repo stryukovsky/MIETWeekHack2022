@@ -1,0 +1,1 @@
+export const BACKEND_SERVER = 'https://d71b-176-59-43-111.eu.ngrok.io'
