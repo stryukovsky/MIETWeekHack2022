@@ -10,6 +10,7 @@ import {
     Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import {BACKEND_SERVER} from "../../assets/constants/constants";
 
 ChartJS.register(
     CategoryScale,
@@ -33,7 +34,7 @@ export default function CallChart({period, title}) {
     const [apiData, setApiData] = useState([])
 
     const getCallsPerYear = (setState) => {
-        axios.get(`https://fa65-176-59-54-115.eu.ngrok.io /api/callsper${period}`)
+        axios.get(`${BACKEND_SERVER}/api/callsper${period}`)
             .then((response) => setState(response.data));
     }
 

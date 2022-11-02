@@ -2,6 +2,7 @@ import  React, {useEffect, useMemo, useState} from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
 import axios from "axios";
+import {BACKEND_SERVER} from "../../assets/constants/constants";
 
 const columns = [
     {
@@ -36,7 +37,7 @@ export default function DataTable() {
     const [jsonRows, setJsonRows] = useState([]);
 
     const getLogs = () => {
-        axios.get('https://fa65-176-59-54-115.eu.ngrok.io /api/logs')
+        axios.get(`${BACKEND_SERVER}/api/logs/`)
             .then(response => setJsonRows(response.data));
     }
 

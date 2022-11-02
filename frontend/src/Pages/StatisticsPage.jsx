@@ -6,6 +6,7 @@ import {createTheme, ThemeProvider} from "@mui/material/styles";
 import {lightGreen} from "@mui/material/colors";
 import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
+import {BACKEND_SERVER} from "../assets/constants/constants";
 
 const innerTheme = createTheme({
     palette: {
@@ -35,7 +36,7 @@ function StatisticsPage() {
                         <Button onClick={() => {setPeriod('week');setTitle('за неделю')}} sx={{ px: 17, fontWeight: 'bold', borderRadius: 3, border: 2 }} size="large">За неделю</Button>
                     </ButtonGroup>
                 </div>
-                <Fab color="primary" size='large' aria-label="add" href="https://fa65-176-59-54-115.eu.ngrok.io /admin" sx={{color: "#f5f5f5", zIndex: 'tooltip', bottom:70, left:1575}}>
+                <Fab color="primary" size='large' aria-label="add" href={`${BACKEND_SERVER}/admin`} sx={{color: "#f5f5f5", zIndex: 'tooltip', bottom:70, left:1575}}>
                     <AddIcon />
                 </Fab>
             </ThemeProvider>

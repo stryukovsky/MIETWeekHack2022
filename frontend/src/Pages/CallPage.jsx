@@ -5,18 +5,23 @@ import Button from "@mui/material/Button";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
 import {lightGreen} from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
+import CircularProgress from '@mui/material/CircularProgress';
 import axios from "axios";
+import {BACKEND_SERVER} from "../assets/constants/constants";
+
 
 const innerTheme = createTheme({
     palette: {
         primary: {
             main: lightGreen[500],
         },
-
     },
 });
 
 function CallPage() {
+    const [loading, setLoading] = React.useState(false);
+    const [success, setSuccess] = React.useState(true);
+
     const [formInput, setFormInput] = React.useReducer(
         (state, newState) => ({ ...state, ...newState }),
         {
@@ -27,7 +32,20 @@ function CallPage() {
 
     const handleSubmit = evt => {
         evt.preventDefault();
-        axios.get(`https://fa65-176-59-54-115.eu.ngrok.io /api/performCall?to=${formInput.to}&trigger=${formInput.trigger}`).then(response => alert(response.data.message));
+        setLoading(true);
+
+        axios.get(`${BACKEND_SERVER}/api/performCall?to=${formInput.to}&trigger=${formInput.trigger}`)
+            .then(
+                response => {
+                    setLoading(false);
+                    if(response.data.status === 'success'){
+                        setSuccess(true);
+                        evt.target.reset();
+                    }
+                    else{
+                        setSuccess(false);
+                    }
+                });
     };
 
     const handleInput = evt => {
@@ -35,6 +53,24 @@ function CallPage() {
         const newValue = evt.target.value;
         setFormInput({ [name]: newValue });
     };
+
+    const buttonSx = {
+        mt:2,
+        width:520,
+        color:'#fff',
+        ...(success && {
+            bgcolor: lightGreen[500],
+            '&:hover': {
+                bgcolor: lightGreen[600],
+            },
+        }) || {
+            bgcolor: '#e53935',
+            '&:hover': {
+                bgcolor: '#a02725',
+            },
+        },
+    };
+
 
     return (
             <div className="call">
@@ -66,9 +102,41 @@ function CallPage() {
                                 label="Телефон"
                                 onChange={handleInput}
                             />
-                            <Button sx={{color:'#fff', mt:2, width:520}} theme={innerTheme} variant="contained" type="submit">
-                                Позвонить
-                            </Button>
+
+                            <Box
+                                sx={{
+                                    position: 'relative'
+                                }}
+                            >
+                                <Button
+                                    variant="contained"
+                                    type="submit"
+                                    sx={buttonSx}
+                                    disabled={loading}
+                                >
+                                    {
+                                        success
+                                            ? 'Позвонить'
+                                            : 'Ошибка. Позвонить снова'
+                                    }
+                                </Button>
+                                {loading && (
+                                    <CircularProgress
+                                        size={30}
+                                        sx={{
+                                            color: lightGreen,
+                                            position: 'absolute',
+                                            top: '50%',
+                                            left: '50%',
+                                            marginLeft: '-10px',
+                                            marginTop: '-7px'
+                                        }}
+                                    />
+                                )}
+                            </Box>
+
+
+
                         </Box>
                     </form>
                 </ThemeProvider>
