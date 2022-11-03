@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Caller/1.0.0": {
+        "dependencies": {
+          "ozeki.voip.sip.client": "11.2.4"
+        },
+        "runtime": {
+          "Caller.dll": {}
+        }
+      },
+      "ozeki.voip.sip.client/11.2.4": {
+        "runtime": {
+          "lib/net40/VoIPSDK.dll": {
+            "assemblyVersion": "11.2.4.290",
+            "fileVersion": "11.2.4.290"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Caller/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ozeki.voip.sip.client/11.2.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bM8gH8V5wF2vCsGhCByfXwCzZzU7jyayyY2REE43/QcoUmL6AceURBYBDDp9MZMa6/PHYC4YjvyFirze+ZX2XA==",
+      "path": "ozeki.voip.sip.client/11.2.4",
+      "hashPath": "ozeki.voip.sip.client.11.2.4.nupkg.sha512"
+    }
+  }
+}
